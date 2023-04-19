@@ -1,16 +1,19 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
 
-import NavLink from './NavLink';
 import { Tooltip } from 'react-tippy';
+
 import useWindowSize from '../hooks/useWindowSize';
 import { useSnapshot } from 'valtio';
 import state from "../../store";
+
+//#region Components
+import NavLink from './NavLink';
 import Logo from './Logo';
+
+
 
 const SideBar = () => {
 
