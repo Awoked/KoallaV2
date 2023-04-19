@@ -4,4 +4,19 @@
 
 body {
   background-color: #1B1A1D;
+  color: #f8f9fa;
+}
+
+
+
+.nav-item{
+  @apply text-3xl grid place-items-center;
+}
+
+.nav-link{
+  @apply p-2.5 rounded-md duration-300 transition-colors hover:bg-black hover:bg-opacity-30;
+}
+
+.nav-link span:last-of-type{
+  @apply text-base font-semibold 2xl:text-lg;
 }
