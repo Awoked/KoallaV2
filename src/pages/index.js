@@ -6,6 +6,7 @@ export default function Home() {
       <Head>
         <title>Koalla</title>
         <meta name="description" content="Koalla yeni nesil filmin tek adresi." />
+        <meta name="keywords" content="Koalla, Film sitesi, Koalla online" />
       </Head>
       
     </>
