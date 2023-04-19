@@ -11,7 +11,7 @@ export default function (req, res) {
         };
         res.setHeader('Set-Cookie', `firstLoad=${cookieValue}; ${Object.entries(cookieOptions).map(([key, value]) => `${key}=${value}`).join('; ')}`);
         res.status(200).send({ status: "ok" })
+    } else {
+        res.status(404).send({ error: "method not allowed" })
     }
-
-    res.status(404).send({ error: "method not allowed" })
 }

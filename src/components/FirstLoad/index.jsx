@@ -5,7 +5,6 @@ import React, { useEffect } from 'react'
 
 const FirstLoad = () => {
 
-
     useEffect(() => {
         const tl = gsap.timeline();
 
@@ -65,6 +64,9 @@ const FirstLoad = () => {
                 scale: 1,
                 duration: .3,
                 ease: Power4.easeInOut,
+                onComplete: () => {
+
+                }
             },
         )
 
@@ -84,16 +86,13 @@ const FirstLoad = () => {
                 scale: 2,
                 opacity: 0,
                 duration: 1.3,
+                pointerEvents: "none",
                 ease: Expo.easeInOut,
             }
         )
 
         fetch("/api/firstload", {
             method: "POST"
-        }).then(res => {
-            return res.json();
-        }).then(data => {
-            console.log(data)
         })
     }
 
