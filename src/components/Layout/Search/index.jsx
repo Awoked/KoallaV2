@@ -29,13 +29,13 @@ const Search = () => {
         <>
             {
                 <div className={`search-wrapper max-md:!left-0 max-md:!w-full left-0 z-20 fixed top-0`} style={{ width: `calc(100% - ${snap.asideWidth}px)`, left: `${snap.asideWidth}px` }}>
-                    <div className="p-3 w-full">
+                    <div className="p-3 md:px-10 md:pt-10 w-full">
                         <form>
 
                             <div className="search-inner">
                                 <input
                                     type="text"
-                                    className='w-full px-3 py-2.5 outline-none rounded-md border bg-transparent'
+                                    className='w-full px-3 py-2.5 text-sm xl:text-base outline-none rounded-md border bg-transparent backdrop-blur-xl'
                                     placeholder='Aramak istediğiniz kelimeyi girin...'
                                 />
                             </div>

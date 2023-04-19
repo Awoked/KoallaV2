@@ -1,3 +1,4 @@
+import HeroSection from '@/components/HeroSection'
 import Head from 'next/head'
 
 export default function Home() {
@@ -8,7 +9,9 @@ export default function Home() {
         <meta name="description" content="Koalla yeni nesil filmin tek adresi." />
         <meta name="keywords" content="Koalla, Film sitesi, Koalla online" />
       </Head>
-      
+
+      <HeroSection />
+
     </>
 
   )

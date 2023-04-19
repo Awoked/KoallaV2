@@ -28,15 +28,21 @@ const SideBar = () => {
 
     const asideElement = useRef(null);
 
-    useEffect(() => {
+    const handleAsideWidth = () => {
+        state.asideWidth = asideElement.current.getBoundingClientRect().width;
+    }
 
-        setTimeout(() => {
-            state.asideWidth = asideElement.current.offsetWidth;
-        }, 1000);
+    useEffect(() => {
+        asideElement.current.addEventListener('transitionend', handleAsideWidth);
+        handleAsideWidth();
+        return () => {
+            asideElement.current.removeEventListener('transitionend', handleAsideWidth);
+        }
+
     }, [snap.asideActive, screenWidth]);
 
     return (
-        <aside ref={asideElement} className={`sticky max-md:w-[90%] z-50 max-md:mx-auto max-md:rounded-xl max-md:bottom-2 md:top-0 h-[60px] md:h-[100svh] transition-all duration-500  ${snap.asideActive ? "md:max-w-[180px]" : "md:max-w-[90px]"}  bg-[#262428]`}>
+        <aside ref={asideElement} className={`sticky max-md:w-[90%] shadow-sm shadow-black z-50 max-md:mx-auto max-md:rounded-xl max-md:bottom-2 md:top-0 h-[60px] md:h-[100svh] transition-all duration-500  ${snap.asideActive ? "md:max-w-[180px]" : "md:max-w-[90px]"}  bg-[#262428]`}>
             <div className="aside-inner w-full h-full flex flex-row md:flex-col items-center p-3">
                 <div className="aside-toggle md:pb-4 max-md:hidden">
                     <ul>

@@ -1,0 +1,30 @@
+.content_wrapper{
+    @apply 
+    before:bg-black 
+    before:absolute 
+    before:left-0 
+    before:top-0 
+    before:w-full 
+    before:h-full
+    before:bg-opacity-40
+    before:backdrop-blur-sm
+    z-[3]
+    py-14
+    md:py-24
+    ;
+}
+
+.content{
+    @apply
+    flex
+    flex-col
+    py-4
+    gap-y-4
+}
+
+.content_title{
+    @apply
+    text-4xl
+    xl:text-6xl
+    2xl:text-8xl
+}
