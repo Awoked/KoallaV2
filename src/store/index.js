@@ -10,6 +10,8 @@ const state = proxy({
         "2xl": 1536,
     },
     asideActive: false,
+    asideWidth: 0,
+    isSearchActive: false,
 
 })
 

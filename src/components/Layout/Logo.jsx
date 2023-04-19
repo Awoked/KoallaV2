@@ -12,7 +12,7 @@ const Logo = () => {
     const {screenWidth} = useWindowSize();
 
     return (
-        <div className="logo max-md:h-full">
+        <div className="logo max-md:h-full max-md:w-2/12 max-md:flex max-md:justify-center">
             <Link href={"/"}>
                 <Image
                     src={snap.asideActive && snap.breakPoints.md <= screenWidth ? "/images/logo.png" : "/images/koalla.png"}

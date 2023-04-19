@@ -12,18 +12,36 @@ const NavLink = ({ href, children, linkName, ...props }) => {
     const { screenWidth } = useWindowSize();
 
     return (
-        <Link href={href} {...props} className='nav-link flex items-center justify-center gap-1.5'>
+        <>
             {
-                children
+                props.as !== "button" ?
+                    <Link href={href} className={`nav-link flex items-center justify-center gap-1.5 ${props.className}`}>
+                        {
+                            children
+                        }
+                        {
+                            snap.asideActive &&
+                            screenWidth >= snap.breakPoints.md &&
+                            <span>
+                                {linkName}
+                            </span>
+                        }
+                    </Link>
+                    :
+                    <button onClick={props.onClick} className={`nav-link flex items-center justify-center gap-1.5 ${props.className}`}>
+                        {
+                            children
+                        }
+                        {
+                            snap.asideActive &&
+                            screenWidth >= snap.breakPoints.md &&
+                            <span>
+                                {linkName}
+                            </span>
+                        }
+                    </button>
             }
-            {
-                snap.asideActive &&
-                screenWidth >= snap.breakPoints.md &&
-                <span>
-                    {linkName}
-                </span>
-            }
-        </Link>
+        </>
     )
 }
 

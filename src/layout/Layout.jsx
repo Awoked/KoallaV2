@@ -4,6 +4,7 @@ import 'react-tippy/dist/tippy.css'
 
 
 import { Comfortaa } from 'next/font/google'
+import Search from '@/components/Layout/Search'
 const comfortaa = Comfortaa({ subsets: ['latin'] })
 
 const Layout = ({ children }) => {
@@ -12,7 +13,8 @@ const Layout = ({ children }) => {
         <>
             <div className={`flex flex-col-reverse md:flex-row ${comfortaa.className}`}>
                 <SideBar />
-                <main className='min-h-[5000px] w-full'>
+                <main className='min-h-[5000px] w-full relative'>
+                    <Search />
                     {children}
                 </main>
             </div>
