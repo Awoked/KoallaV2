@@ -37,7 +37,7 @@ const SlideItem = () => {
                                 John Wick 4
                             </h1>
                             <p className='max-lg:line-clamp-3'>
-                                Köpeğinin öldürülmesi üzerine yeniden yeraltı dünyasına karışan eski bir suikastçi olan John Wick'in (Keanu Reeves) yüksek tansiyonlu maceraları hız kesmeden devam ediyor. Suikastçinin tekrardan peşine takılan katillerle mücadelesini izleyeceğimiz devam filminde, mutlu bir son beklemenin büyük bir hata olacağı söylentiler arasında.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quis natus autem reprehenderit aliquam voluptatibus rem amet placeat. Quis, cupiditate! Odio laudantium porro sapiente consectetur necessitatibus adipisci quia ab qui!
                             </p>
                         </div>
 

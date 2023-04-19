@@ -12,7 +12,6 @@ const state = proxy({
     asideActive: false,
     asideWidth: 0,
     isSearchActive: false,
-    firstLoadActive: true
 })
 
 export default state;

@@ -19,20 +19,9 @@ const Layout = ({ children }) => {
     const { screenWidth } = useWindowSize();
 
 
-    useEffect(() => {
-        const firstLoadActive = JSON.parse(localStorage.getItem("firstLoadActive"));
-        if (firstLoadActive !== null) {
-            state.firstLoadActive = firstLoadActive
-        }
-    }, []);
-
     return (
 
         <>
-            {
-                snap.firstLoadActive &&
-                <FirstLoad />
-            }
             <div className={`flex flex-col-reverse md:flex-row ${comfortaa.className}`}>
                 <SideBar />
                 <main className='min-h-[5000px] w-full relative' style={{ width: screenWidth >= snap.breakPoints.md ? `calc(100% - ${snap.asideWidth}px)` : "100%" }}>

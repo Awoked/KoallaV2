@@ -2,11 +2,9 @@ import state from '@/store';
 import { Bounce, Elastic, Expo, Power4, gsap } from 'gsap'
 import Image from 'next/image';
 import React, { useEffect } from 'react'
-import { useSnapshot } from 'valtio';
 
 const FirstLoad = () => {
 
-    const snap = useSnapshot(state);
 
     useEffect(() => {
         const tl = gsap.timeline();
@@ -80,19 +78,23 @@ const FirstLoad = () => {
         ))
     }
 
-    const CloseFirstLoad = () =>{
-        gsap.to(".first-load", 
+    const CloseFirstLoad = () => {
+        gsap.to(".first-load",
             {
                 scale: 2,
                 opacity: 0,
                 duration: 1.3,
                 ease: Expo.easeInOut,
-                onComplete: () =>{
-                    state.firstLoadActive = false;
-                    localStorage.setItem("firstLoadActive", false)
-                }
             }
         )
+
+        fetch("/api/firstload", {
+            method: "POST"
+        }).then(res => {
+            return res.json();
+        }).then(data => {
+            console.log(data)
+        })
     }
 
     return (
