@@ -30,7 +30,8 @@ const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPre
         if (isNext || isPrev) {
             gsap.to(coverElement.current, { opacity: 0, scale: .8 });
             gsap.to(titleElement.current, { y: -80 });
-            gsap.to(descriptionElement.current, { autoAlpha: 0 })
+            gsap.to(descriptionElement.current, { autoAlpha: 0, x: "-60%" });
+            gsap.to(buttonElement.current, { autoAlpha: 0, scale: .5 });
         }
         if (isActive) {
             tl.to(coverElement.current,
@@ -45,8 +46,19 @@ const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPre
             tl.to(titleElement.current,
                 { y: 0, duration: .6 }
             )
-        }
+            tl.to(descriptionElement.current, {
+                autoAlpha: 1,
+                x: 0,
+                duration: .8
+            });
 
+            tl.to(buttonElement.current, {
+                autoAlpha: 1,
+                scale: 1,
+                duration: .7,
+                ease: Expo.easeInOut
+            })
+        }
     }, [isActive, isNext, isPrev])
 
     return (
@@ -81,7 +93,7 @@ const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPre
 
                         </div>
 
-                        <div className={`content md:w-auto ${styles.content} md:max-w-3xl`}>
+                        <div className={`content md:w-auto overflow-x-hidden ${styles.content} md:max-w-3xl`}>
                             <h1 className={`${styles.content_title} inline-block overflow-hidden`}>
                                 <span ref={titleElement} className='inline-block'>
                                     {title}
@@ -91,8 +103,8 @@ const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPre
                                 {description}
                             </p>
 
-                            <div ref={buttonElement} className="buttons-wrapper mt-auto">
-                                <button className='button-v2 '>
+                            <div className="buttons-wrapper mt-auto">
+                                <button ref={buttonElement} className='button-v2 '>
                                     <BsFillPlayFill />
                                     <span>
                                         Şimdi izle

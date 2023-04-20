@@ -1,0 +1,61 @@
+.movies_grid{
+    @apply
+    grid
+    grid-cols-1
+    sm:grid-cols-2
+    md:grid-cols-3
+    lg:grid-cols-4
+    xl:grid-cols-5
+    gap-y-12
+    gap-x-8
+    px-4
+    ;
+}
+
+.card{
+    @apply
+    relative
+    max-h-[450px] 
+    overflow-hidden
+    shadow-sm
+    shadow-black
+    ;
+}
+
+.card_content{
+    @apply
+    absolute
+    z-[1]
+    h-full
+    top-0
+    left-0
+    flex
+    flex-col-reverse
+    gap-y-1.5
+    justify-between
+    before:absolute
+    before:left-0
+    before:top-0
+    before:bg-black
+    before:bg-opacity-60
+    before:backdrop-blur-sm
+    before:z-[-1]
+    before:h-full
+    before:w-full
+    ;
+}
+.card_content h3{
+    @apply
+    text-xl
+    2xl:text-2xl
+    line-clamp-1
+    font-medium
+    ;
+}
+.card_content p{
+    @apply
+    text-xs
+    2xl:text-base
+    font-light
+    ;
+}

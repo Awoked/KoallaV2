@@ -1,0 +1,8 @@
+.section_title {
+    @apply
+    text-4xl
+    2xl:text-5xl
+    font-semibold
+    py-4
+    ;
+}

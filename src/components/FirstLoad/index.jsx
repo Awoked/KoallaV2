@@ -3,6 +3,10 @@ import { Bounce, Elastic, Expo, Power4, gsap } from 'gsap'
 import Image from 'next/image';
 import React, { useEffect } from 'react'
 
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ subsets: ["latin"] });
+
 const FirstLoad = () => {
 
     useEffect(() => {
@@ -44,7 +48,7 @@ const FirstLoad = () => {
             {
                 y: -50,
                 opacity: 0,
-                stagger: .3,
+                stagger: .1,
                 duration: .2,
                 delay: 1.5,
                 ease: Expo.easeInOut
@@ -97,7 +101,7 @@ const FirstLoad = () => {
     }
 
     return (
-        <div className='first-load fixed top-0 left-0 z-[999]'>
+        <div className={`first-load fixed top-0 left-0 z-[999] ${montserrat.className}`}>
             <video
                 src="/videos/Untitled.mp4"
                 autoPlay
@@ -110,7 +114,7 @@ const FirstLoad = () => {
             <div className="content fixed z-[1000] top-0 left-0 w-full h-full bg-black backdrop-blur-sm bg-opacity-80">
                 <div className="inner  flex justify-center  items-center w-full h-full">
                     <div className="text-wrapper text-5xl xl:text-6xl font-bold leading-relaxed text-center">
-                        <div className="text-1">
+                        <div className="text-1 leading-[1]">
                             <h1 className='content-text'>
                                 {
                                     TextForAnimation("Gördüklerinizin")
@@ -128,7 +132,7 @@ const FirstLoad = () => {
                             </h1>
                         </div>
 
-                        <div className="text-2">
+                        <div className="text-2 leading-[1]">
 
                             <h1 className='content-text'>
                                 {

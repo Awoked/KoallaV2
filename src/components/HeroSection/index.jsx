@@ -12,6 +12,27 @@ const HeroSection = () => {
 
     const snap = useSnapshot(state);
 
+    const sliderData = [
+        {
+            title: "John Wick",
+            bgCover: "/images/movie-images/john-wick4.jpg",
+            cover: "/images/movie-images/john-wick4-cover.jpg",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quis natus autem reprehenderit aliquam voluptatibus rem amet placeat. Quis, cupiditate! Odio laudantium porro sapiente consectetur necessitatibus adipisci quia ab qui!"
+        },
+        {
+            title: "Ready Player One",
+            bgCover: "/images/movie-images/ready-player-one.jpg",
+            cover: "/images/movie-images/ready-player-one-cover.jpg",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quis natus autem reprehenderit aliquam voluptatibus rem amet placeat. Quis, cupiditate! Odio laudantium porro sapiente consectetur necessitatibus adipisci quia ab qui!"
+        },
+        {
+            title: "John Wick",
+            bgCover: "/images/movie-images/john-wick4.jpg",
+            cover: "/images/movie-images/john-wick4-cover.jpg",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quis natus autem reprehenderit aliquam voluptatibus rem amet placeat. Quis, cupiditate! Odio laudantium porro sapiente consectetur necessitatibus adipisci quia ab qui!"
+        },
+    ]
+
     return (
         <section className=''>
             <div>
@@ -21,12 +42,12 @@ const HeroSection = () => {
                     speed={1300}
                     autoplay={{
                         delay: 6500,
+                        disableOnInteraction: false
                     }}
                     modules={[Autoplay]}
-
                 >
                     {
-                        [..."123"].map((data, index) => (
+                        sliderData.map((data, index) => (
                             <SwiperSlide
                                 key={index}
                             >
@@ -36,10 +57,10 @@ const HeroSection = () => {
                                         isPrev={isPrev}
                                         isNext={isNext}
                                         isActive={isActive}
-                                        title={`John Wick ${index}`}
-                                        bgCover={"/images/movie-images/john-wick4.jpg"}
-                                        cover={"/images/movie-images/john-wick4-cover.jpg"}
-                                        description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quis natus autem reprehenderit aliquam voluptatibus rem amet placeat. Quis, cupiditate! Odio laudantium porro sapiente consectetur necessitatibus adipisci quia ab qui!"}
+                                        title={data.title}
+                                        bgCover={data.bgCover}
+                                        cover={data.cover}
+                                        description={data.description}
                                     />
                                 )}
                             </SwiperSlide>

@@ -1,5 +1,6 @@
 import FirstLoad from '@/components/FirstLoad';
 import HeroSection from '@/components/HeroSection'
+import MovieCardSection from '@/components/MovieCardSection';
 import Head from 'next/head'
 
 export default function Home({ firstLoad }) {
@@ -15,6 +16,7 @@ export default function Home({ firstLoad }) {
         <FirstLoad />
       }
       <HeroSection />
+      <MovieCardSection />
 
     </>
 
