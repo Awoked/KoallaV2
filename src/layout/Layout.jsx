@@ -9,6 +9,7 @@ import { useSnapshot } from 'valtio'
 import state from '@/store'
 import useWindowSize from '@/components/hooks/useWindowSize'
 import FirstLoad from '@/components/FirstLoad'
+import MoviePlayer from '@/components/MoviePlayer'
 
 const comfortaa = Comfortaa({ subsets: ['latin'] })
 
@@ -28,7 +29,9 @@ const Layout = ({ children }) => {
                     <Search />
                     {children}
                 </main>
+
             </div>
+            <MoviePlayer />
 
         </>
     )

@@ -4,6 +4,7 @@ import MovieCardSection from '@/components/MovieCardSection';
 import Head from 'next/head'
 
 export default function Home({ firstLoad }) {
+
   return (
     <>
       <Head>
