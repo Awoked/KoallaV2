@@ -23,3 +23,21 @@ body {
 .nav-link span:last-of-type{
   @apply text-base font-semibold 2xl:text-lg;
 }
+
+
+.button-v2{
+  @apply
+  flex
+  flex-row
+  items-center
+  gap-x-1.5
+  font-semibold
+  rounded-full
+  border 
+  py-1.5
+  px-2
+  text-sm
+  lg:text-base
+  2xl:text-lg
+  ;
+}

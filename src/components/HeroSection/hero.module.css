@@ -9,8 +9,8 @@
     before:bg-opacity-40
     before:backdrop-blur-sm
     z-[3]
-    py-14
-    md:py-24
+    py-4
+    md:py-6
     ;
 }
 
@@ -24,6 +24,7 @@
 
 .content_title{
     @apply
+    font-black
     text-4xl
     xl:text-6xl
     2xl:text-8xl
