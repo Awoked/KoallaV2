@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
                 </main>
 
             </div>
-            <MoviePlayer />
+            {/* <MoviePlayer /> */}
 
         </>
     )

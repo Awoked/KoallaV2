@@ -15,20 +15,20 @@ const HeroSection = () => {
     const sliderData = [
         {
             title: "John Wick",
-            bgCover: "/images/movie-images/john-wick4.jpg",
-            cover: "/images/movie-images/john-wick4-cover.jpg",
+            bgCover: "/images/movie-images/john-wick4.webp",
+            cover: "/images/movie-images/john-wick4-cover.webp",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quis natus autem reprehenderit aliquam voluptatibus rem amet placeat. Quis, cupiditate! Odio laudantium porro sapiente consectetur necessitatibus adipisci quia ab qui!"
         },
         {
             title: "Ready Player One",
-            bgCover: "/images/movie-images/ready-player-one.jpg",
-            cover: "/images/movie-images/ready-player-one-cover.jpg",
+            bgCover: "/images/movie-images/ready-player-one.webp",
+            cover: "/images/movie-images/ready-player-one-cover.webp",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quis natus autem reprehenderit aliquam voluptatibus rem amet placeat. Quis, cupiditate! Odio laudantium porro sapiente consectetur necessitatibus adipisci quia ab qui!"
         },
         {
             title: "John Wick",
-            bgCover: "/images/movie-images/john-wick4.jpg",
-            cover: "/images/movie-images/john-wick4-cover.jpg",
+            bgCover: "/images/movie-images/john-wick4.webp",
+            cover: "/images/movie-images/john-wick4-cover.webp",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quis natus autem reprehenderit aliquam voluptatibus rem amet placeat. Quis, cupiditate! Odio laudantium porro sapiente consectetur necessitatibus adipisci quia ab qui!"
         },
     ]

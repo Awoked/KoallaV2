@@ -66,8 +66,8 @@ const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPre
             <div className="bg-cover w-full max-md:min-h-[800px] max-md:h-screen" style={styleHeight}>
                 <Image
                     src={bgCover}
-                    width={1280}
-                    height={720}
+                    width={720}
+                    height={480}
                     className='md:w-full max-md:h-full object-cover'
                     alt={title}
                 />

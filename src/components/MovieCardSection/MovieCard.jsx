@@ -10,7 +10,7 @@ const MovieCard = () => {
         <Link href={"/"} className={styles.card}>
             <div className="cover">
                 <Image
-                    src={"/images/movie-images/john-wick4-cover.jpg"}
+                    src={"/images/movie-images/john-wick4-cover.webp"}
                     width={300}
                     height={450}
                     className='w-full object-cover'

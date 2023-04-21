@@ -1,7 +1,17 @@
 import FirstLoad from '@/components/FirstLoad';
-import HeroSection from '@/components/HeroSection'
+// import HeroSection from '@/components/HeroSection'
 import MovieCardSection from '@/components/MovieCardSection';
 import Head from 'next/head'
+
+import dynamic from 'next/dynamic';
+
+const DynamicHeroSection = dynamic(() => import("../components/HeroSection"), {
+  loading: () => (<p>Loading...</p>),
+  ssr: false
+})
+const DynamicMovieCardSection = dynamic(() => import("../components/MovieCardSection"), {
+  loading: () => (<p>Loading...</p>),
+})
 
 export default function Home({ firstLoad }) {
 
@@ -16,8 +26,8 @@ export default function Home({ firstLoad }) {
         firstLoad &&
         <FirstLoad />
       }
-      <HeroSection />
-      <MovieCardSection />
+      <DynamicHeroSection />
+      <DynamicMovieCardSection />
 
     </>
 
