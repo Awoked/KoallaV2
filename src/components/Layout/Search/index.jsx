@@ -23,6 +23,8 @@ const Search = () => {
         )
 
 
+        
+
     }, [snap.isSearchActive])
 
     return (

@@ -7,7 +7,6 @@ import dynamic from 'next/dynamic';
 
 const DynamicHeroSection = dynamic(() => import("../components/HeroSection"), {
   loading: () => (<p>Loading...</p>),
-  ssr: false
 })
 const DynamicMovieCardSection = dynamic(() => import("../components/MovieCardSection"), {
   loading: () => (<p>Loading...</p>),

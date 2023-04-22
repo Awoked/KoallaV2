@@ -80,6 +80,18 @@ const SideBar = () => {
                         <li className='nav-item'>
                             <Tooltip
                                 disabled={snap.asideActive}
+                                title={"Anasayfa"}
+                                position={screenWidth > snap.breakPoints.md ? "right" : "top"}
+                                trigger="mouseenter"
+                            >
+                                <NavLink href="/page2" linkName={"Anasayfa"} >
+                                    <AiOutlineHome />
+                                </NavLink>
+                            </Tooltip>
+                        </li>
+                        <li className='nav-item'>
+                            <Tooltip
+                                disabled={snap.asideActive}
                                 title={"Arama"}
                                 position={screenWidth > snap.breakPoints.md ? "right" : "top"}
                                 trigger="mouseenter"
