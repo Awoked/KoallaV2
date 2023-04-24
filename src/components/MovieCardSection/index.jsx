@@ -11,7 +11,7 @@ const MovieCardSection = () => {
     return (
         <>
 
-            <section>
+            <section className='py-4'>
                 <div className="container mx-auto">
                     <SectionTitle
                         title={"Filmler"}

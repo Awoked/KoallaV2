@@ -1,6 +1,5 @@
-.movies_grid{
-    @apply
-    grid
+.movies_grid {
+  @apply grid
     grid-cols-2
     sm:grid-cols-2
     md:grid-cols-3
@@ -8,24 +7,20 @@
     xl:grid-cols-5
     gap-y-12
     gap-x-8
-    px-4
-    ;
+    px-4;
 }
 
-.card{
-    @apply
-    relative
+.card {
+  @apply relative
     max-h-[450px] 
     overflow-hidden
     shadow-sm
     shadow-black
-    cursor-pointer
-    ;
+    cursor-pointer;
 }
 
-.card_content{
-    @apply
-    absolute
+.card_content {
+  @apply absolute
     z-[1]
     h-full
     top-0
@@ -42,21 +37,16 @@
     before:backdrop-blur-sm
     before:z-[-1]
     before:h-full
-    before:w-full
-    ;
+    before:w-full;
 }
-.card_content h3{
-    @apply
-    text-xl
+.card_content h3 {
+  @apply text-xl
     2xl:text-2xl
     line-clamp-1
-    font-medium
-    ;
+    font-medium;
 }
-.card_content p{
-    @apply
-    text-xs
+.card_content p {
+  @apply text-xs
     2xl:text-base
-    font-light
-    ;
+    font-light;
 }

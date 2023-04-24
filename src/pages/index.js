@@ -25,7 +25,7 @@ export default function Home({ firstLoad }) {
       }
       <DynamicHeroSection />
       <DynamicMovieCardSection />
-
+      {/* <iframe src="//vidmoly.to/embed-gn3mq95uldn3.html" scrolling="no" frameborder="0" width="640" height="360" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe> */}
     </>
 
   )
