@@ -79,7 +79,7 @@ const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId }) => {
             {
                 toggleDetails &&
                 <div ref={details} className='fixed grid place-items-center left-0 top-0 w-full h-full bg-black bg-opacity-30 z-30'>
-                    <div className='w-2/3 h-2/3 z-20 bg-[#262428] bg-opacity-95 backdrop-blur-sm overflow-hidden shadow-md shadow-black rounded-lg relative'>
+                    <div className='w-11/12 h-4/6 md:w-2/3 md:h-2/3 z-20 bg-[#262428] bg-opacity-95 backdrop-blur-sm overflow-hidden shadow-md shadow-black rounded-lg relative'>
                         <div className='absolute right-3 top-3 z-10'>
                             <Button
                                 onClick={() => setToggleDetails(false)}
