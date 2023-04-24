@@ -117,7 +117,8 @@ const FirstLoad = () => {
                 <Image
                     src={"/images/static-noise.gif"}
                     fill
-                    className='opacity-10'
+                    className='opacity-5'
+                    quality={0}
                     alt='noise'
                 />
             </div>
