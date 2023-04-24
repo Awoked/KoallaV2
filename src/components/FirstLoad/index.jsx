@@ -5,6 +5,8 @@ import React, { useEffect } from 'react'
 
 import { Montserrat } from 'next/font/google';
 
+import styles from "./index.module.css";
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const FirstLoad = () => {
@@ -110,6 +112,15 @@ const FirstLoad = () => {
                 className='w-screen h-screen object-cover'
             >
             </video>
+
+            <div className={`${styles.gradient_bg_effect} w-full h-full absolute left-0 top-0 z-[10000] pointer-events-none`}>
+                <Image
+                    src={"/images/static-noise.gif"}
+                    fill
+                    className='opacity-10'
+                    alt='noise'
+                />
+            </div>
 
             <div className="content fixed z-[1000] top-0 left-0 w-full h-full bg-black backdrop-blur-sm bg-opacity-80">
                 <div className="inner  flex justify-center  items-center w-full h-full">

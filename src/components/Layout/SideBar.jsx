@@ -33,10 +33,12 @@ const SideBar = () => {
     }
 
     useEffect(() => {
-        asideElement.current.addEventListener('transitionend', handleAsideWidth);
-        handleAsideWidth();
-        return () => {
-            asideElement.current.removeEventListener('transitionend', handleAsideWidth);
+        if (asideElement.current) {
+            asideElement.current.addEventListener('transitionend', handleAsideWidth);
+            handleAsideWidth();
+            return () => {
+                asideElement.current.removeEventListener('transitionend', handleAsideWidth);
+            }
         }
 
     }, [snap.asideActive, screenWidth]);
@@ -80,18 +82,6 @@ const SideBar = () => {
                         <li className='nav-item'>
                             <Tooltip
                                 disabled={snap.asideActive}
-                                title={"Anasayfa"}
-                                position={screenWidth > snap.breakPoints.md ? "right" : "top"}
-                                trigger="mouseenter"
-                            >
-                                <NavLink href="/page2" linkName={"Anasayfa"} >
-                                    <AiOutlineHome />
-                                </NavLink>
-                            </Tooltip>
-                        </li>
-                        <li className='nav-item'>
-                            <Tooltip
-                                disabled={snap.asideActive}
                                 title={"Arama"}
                                 position={screenWidth > snap.breakPoints.md ? "right" : "top"}
                                 trigger="mouseenter"
@@ -124,10 +114,10 @@ const SideBar = () => {
                             <Menu
                                 isMenuActive={authMenuToggler}
                             >
-                                <NavLink href={"/"}>
+                                <NavLink href={"/auth/login"}>
                                     <span className='w-max text-sm 2xl:text-base'>Giriş Yap</span>
                                 </NavLink>
-                                <NavLink href={"/"} className="bg-[#FD3D23]">
+                                <NavLink href={"/auth/register"} className="bg-[#FD3D23]">
                                     <span className='w-max text-sm 2xl:text-base'>Kayıt Ol</span>
                                 </NavLink>
                             </Menu>

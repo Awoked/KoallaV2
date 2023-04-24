@@ -4,10 +4,18 @@ import styles from "./index.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
 import { Tooltip } from 'react-tippy';
+import slugify from '@/helpers/slugify';
 
-const MovieCard = () => {
+const MovieCard = ({ movieName, movieId }) => {
     return (
-        <Link href={"/"} className={styles.card}>
+        <Link
+            href={{
+                pathname: "/",
+                query: { "id": movieId }
+            }}
+            as={`/${slugify(movieName)}`}
+            className={styles.card}
+        >
             <div className="cover">
                 <Image
                     src={"/images/movie-images/john-wick4-cover.webp"}

@@ -16,12 +16,18 @@ dependencies:
   eslint-config-next:
     specifier: 13.3.0
     version: 13.3.0(eslint@8.38.0)(typescript@5.0.4)
+  formik:
+    specifier: ^2.2.9
+    version: 2.2.9(react@18.2.0)
   gsap:
     specifier: ^3.11.5
     version: 3.11.5
   next:
     specifier: 13.3.0
     version: 13.3.0(react-dom@18.2.0)(react@18.2.0)
+  next-loader:
+    specifier: ^1.1.0
+    version: 1.1.0(next@13.3.0)(react-dom@18.2.0)(react@18.2.0)
   postcss:
     specifier: 8.4.22
     version: 8.4.22
@@ -677,6 +683,11 @@ packages:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
     dev: false
 
+  /deepmerge@2.2.1:
+    resolution: {integrity: sha512-R9hc1Xa/NOBi9WRVUWg19rl1UB7Tt4kuPd+thNJgFZoxXsTz7ncaPaeIm+40oSGuP33DfMb4sZt1QIGiJzC4EA==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /define-lazy-prop@2.0.0:
     resolution: {integrity: sha512-Ds09qNh8yw3khSjiJjiUInaGX9xlqZDY7JVryGxdxV7NPeuqQfplOpQ66yJFZut3jLa5zOwkXw1g9EI2uKh4Og==}
     engines: {node: '>=8'}
@@ -1167,6 +1178,21 @@ packages:
       is-callable: 1.2.7
     dev: false
 
+  /formik@2.2.9(react@18.2.0):
+    resolution: {integrity: sha512-LQLcISMmf1r5at4/gyJigGn0gOwFbeEAlji+N9InZF6LIMXnFNkO42sCI8Jt84YZggpD4cPWObAZaxpEFtSzNA==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      deepmerge: 2.2.1
+      hoist-non-react-statics: 3.3.2
+      lodash: 4.17.21
+      lodash-es: 4.17.21
+      react: 18.2.0
+      react-fast-compare: 2.0.4
+      tiny-warning: 1.0.3
+      tslib: 1.14.1
+    dev: false
+
   /fraction.js@4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: false
@@ -1368,6 +1394,12 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
+    dev: false
+
+  /hoist-non-react-statics@3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+    dependencies:
+      react-is: 16.13.1
     dev: false
 
   /ignore@5.2.4:
@@ -1659,8 +1691,16 @@ packages:
       p-locate: 5.0.0
     dev: false
 
+  /lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
+
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+    dev: false
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
   /loose-envify@1.4.0:
@@ -1724,6 +1764,18 @@ packages:
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+    dev: false
+
+  /next-loader@1.1.0(next@13.3.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-NMPidb18D9Ub92vz9NXZXXFu8IOSvmp3ofy4idntBq+z4RoTtTuufTdKGCWKz8iWCA6UG6UXbgTIiQqntiKF9g==}
+    peerDependencies:
+      next: 13.3.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      next: 13.3.0(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /next@13.3.0(react-dom@18.2.0)(react@18.2.0):
@@ -2071,6 +2123,10 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-fast-compare@2.0.4:
+    resolution: {integrity: sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==}
+    dev: false
+
   /react-icons@4.8.0(react@18.2.0):
     resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
     peerDependencies:
@@ -2416,6 +2472,10 @@ packages:
     dependencies:
       globalyzer: 0.1.0
       globrex: 0.1.2
+    dev: false
+
+  /tiny-warning@1.0.3:
+    resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
     dev: false
 
   /to-regex-range@5.0.1:

@@ -1,6 +1,4 @@
 import FirstLoad from '@/components/FirstLoad';
-// import HeroSection from '@/components/HeroSection'
-import MovieCardSection from '@/components/MovieCardSection';
 import Head from 'next/head'
 
 import dynamic from 'next/dynamic';

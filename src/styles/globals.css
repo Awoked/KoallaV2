@@ -45,3 +45,11 @@ body {
   hover:bg-white
   ;
 }
+
+.first-load .content-text span{
+  background-image: url("/images/heisenberg.png");
+   background-clip: text;
+	-webkit-background-clip: text;
+  background-size: cover;
+	color: transparent;
+}

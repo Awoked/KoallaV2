@@ -1,0 +1,42 @@
+.Auth_Wrapper {
+    @apply w-full h-full grid place-items-center;
+}
+
+.Auth_Form_Wrapper {
+    @apply flex flex-col gap-y-6;
+}
+
+.input {
+    @apply 
+    bg-transparent 
+    relative
+    outline-none 
+    text-white 
+    border-b
+    py-1.5 
+    px-2.5 
+    ;
+}
+
+.input_wrapper{
+    @apply
+    flex
+    flex-col
+    gap-y-2
+    relative
+    before:z-10
+    before:transition-all
+    before:absolute
+    before:bg-[#FF3E23]
+    before:rounded-md
+    before:duration-300
+    before:left-1/2
+    before:w-0
+    focus-within:before:left-0
+    before:-bottom-0.5
+    before:h-1
+    before:opacity-0
+    focus-within:before:opacity-100
+    focus-within:before:w-full
+    ;
+}

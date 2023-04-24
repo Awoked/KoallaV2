@@ -25,6 +25,8 @@ const MovieCardSection = () => {
 
                                 <MovieCard
                                     key={index}
+                                    movieId={1}
+                                    movieName={"John Wick 4"}
                                 />
                             ))
                         }

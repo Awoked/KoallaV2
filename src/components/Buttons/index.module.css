@@ -1,0 +1,28 @@
+.button {
+    @apply
+    flex 
+    items-center 
+    justify-center 
+    transition-all
+    duration-300
+    gap-1.5 
+    bg-[#FD3D23]
+    hover:bg-[#262428]
+    hover:text-[#FD3D23]
+    rounded-md
+    py-1.5
+    font-semibold
+    2xl:text-lg
+    text-base
+    ;
+}
+
+.outline{
+    @apply
+    border
+    border-[#FD3D23] 
+    bg-transparent
+    hover:bg-[#FD3D23]
+    hover:text-white
+    ;
+}

@@ -2,6 +2,7 @@ import slugify from '@/helpers/slugify';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
+import { BsArrowLeft } from 'react-icons/bs';
 
 const MoviePlayer = () => {
 
@@ -12,32 +13,46 @@ const MoviePlayer = () => {
     });
 
 
-
     useEffect(() => {
+
+        const id = router.query;
+        setMovie({
+            url: "/videos/neon.mp4"
+        })
     }, [router])
 
     return (
-        <div className='fixed bottom-0 right-0 p-3 bg-red-300 z-30'>
+        <>
 
-            <Link
-                href={{
-                    pathname: "/",
-                    query: { "movie-slug": "value2" }
-                }}
-                as={`/${slugify("Film Adı")}`}
+            <div
+                className='fixed left-0 top-0 w-full h-full bg-[#262428] z-[100] '
             >
-                değiştir
-            </Link>
-            <br />
-            <pre>
-                {
+                <div className="relative w-full h-full grid place-items-center">
+                    <div
+                        className={`absolute left-0 top-0 py-3 px-4 z-10 w-full bg-gradient-to-b from-black to-transparent transition-all group opacity-0 hover:opacity-100`}
+                    >
+                        <Link
+                            href={"/"}
 
-                }
-                {
-                    JSON.stringify(router.query, null, 2)
-                }
-            </pre>
-        </div>
+                            className='transition-transform translate-x-20 group-hover:translate-x-0'
+                        >
+                            <BsArrowLeft size={32} />
+                        </Link>
+
+
+                    </div>
+                    <video
+                        src={movie.url}
+                        controls
+                        className='w-full'
+                    >
+
+                    </video>
+
+                </div>
+            </div>
+
+        </>
     )
 }
 
