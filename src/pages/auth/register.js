@@ -6,6 +6,7 @@ import Button from '@/components/Buttons/Button'
 
 import { Formik } from "formik"
 import { AiOutlineLoading } from 'react-icons/ai'
+import Head from 'next/head'
 
 const Register = () => {
 
@@ -37,68 +38,73 @@ const Register = () => {
     }
 
     return (
-        <Formik
-            initialValues={{
-                username: '',
-                password: '',
-                passwordRepeat: ''
-            }}
+        <>
+            <Head>
+                <title>Kayıt Ol</title>
+            </Head>
+            <Formik
+                initialValues={{
+                    username: '',
+                    password: '',
+                    passwordRepeat: ''
+                }}
 
-            validate={validateForm}
-            onSubmit={handleRegister}
-        >
-            {
-                ({ handleSubmit, errors, values, handleChange, isSubmitting }) => (
+                validate={validateForm}
+                onSubmit={handleRegister}
+            >
+                {
+                    ({ handleSubmit, errors, values, handleChange, isSubmitting }) => (
 
-                    <form onSubmit={handleSubmit} className='w-full h-full'>
-                        <Form>
+                        <form onSubmit={handleSubmit} className='w-full h-full'>
+                            <Form>
 
-                            <Input
-                                inputLabel={"Kullanıcı Adı"}
-                                placeholder="Kullanıcı Adı"
-                                name="username"
-                                onChange={handleChange}
-                                value={values.username}
-                                error={errors.username}
-                                required
-                            />
-                            <Input
-                                inputLabel={"Şifre"}
-                                placeholder="Şifre"
-                                type="password"
-                                name="password"
-                                onChange={handleChange}
-                                error={errors.password}
-                                required
-                            />
-                            <Input
-                                inputLabel={"Şifre Tekrar"}
-                                placeholder="Şifre Tekrar"
-                                type="password"
-                                name="passwordRepeat"
-                                onChange={handleChange}
-                                error={errors.passwordRepeat}
-                                required
-                            />
-                            <Button
-                                variant={"outline"}
-                                onClick={() => console.log("test")}
-                                type="submit"
-                                disabled={isSubmitting}
-                                className={`${isSubmitting && "cursor-not-allowed"}`}
-                            >
-                                {
-                                    isSubmitting ?
-                                        <AiOutlineLoading className='animate-spin' size={24} />
-                                        :
-                                        "Kayıt Ol"
-                                }
-                            </Button>
-                        </Form>
-                    </form>
-                )
-            }
-        </Formik>
+                                <Input
+                                    inputLabel={"Kullanıcı Adı"}
+                                    placeholder="Kullanıcı Adı"
+                                    name="username"
+                                    onChange={handleChange}
+                                    value={values.username}
+                                    error={errors.username}
+                                    required
+                                />
+                                <Input
+                                    inputLabel={"Şifre"}
+                                    placeholder="Şifre"
+                                    type="password"
+                                    name="password"
+                                    onChange={handleChange}
+                                    error={errors.password}
+                                    required
+                                />
+                                <Input
+                                    inputLabel={"Şifre Tekrar"}
+                                    placeholder="Şifre Tekrar"
+                                    type="password"
+                                    name="passwordRepeat"
+                                    onChange={handleChange}
+                                    error={errors.passwordRepeat}
+                                    required
+                                />
+                                <Button
+                                    variant={"outline"}
+                                    onClick={() => console.log("test")}
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className={`${isSubmitting && "cursor-not-allowed"}`}
+                                >
+                                    {
+                                        isSubmitting ?
+                                            <AiOutlineLoading className='animate-spin' size={24} />
+                                            :
+                                            "Kayıt Ol"
+                                    }
+                                </Button>
+                            </Form>
+                        </form>
+                    )
+                }
+            </Formik>
+        </>
 
     )
 }

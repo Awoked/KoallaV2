@@ -15,7 +15,7 @@ const NavLink = ({ href, children, linkName, ...props }) => {
         <>
             {
                 props.as !== "button" ?
-                    <Link href={href} className={`nav-link flex items-center justify-center gap-1.5 ${props.className}`}>
+                    <Link href={href} onClick={props.onClick} className={`nav-link flex items-center justify-center gap-1.5 ${props.className}`}>
                         {
                             children
                         }

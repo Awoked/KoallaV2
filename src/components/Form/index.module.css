@@ -1,5 +1,5 @@
 .Auth_Wrapper {
-    @apply w-full h-full grid place-items-center;
+    @apply w-full h-full grid place-items-center min-h-screen;
 }
 
 .Auth_Form_Wrapper {

@@ -66,7 +66,6 @@ const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPre
             <div className="bg-cover w-full max-md:min-h-[800px] max-md:h-screen" style={styleHeight}>
                 <Image
                     src={bgCover}
-                    priority
                     width={720}
                     height={480}
                     quality={1}
@@ -86,7 +85,6 @@ const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPre
                             <div ref={coverElement} className="cover max-md:max-h-[500px] md:w-max md:h-full rounded-md overflow-hidden shadow-2xl shadow-black">
                                 <Image
                                     quality={0}
-                                    priority
                                     src={cover}
                                     width={600}
                                     height={400}

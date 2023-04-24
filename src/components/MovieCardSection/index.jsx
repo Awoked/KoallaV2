@@ -26,7 +26,10 @@ const MovieCardSection = () => {
                                 <MovieCard
                                     key={index}
                                     movieId={1}
-                                    movieName={"John Wick 4"}
+                                    movieName={"Ready Player One"}
+                                    movieImage={"/images/movie-images/ready-player-one-cover.webp"}
+                                    imdb={9.5}
+                                    movieDetails={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae saepe accusamus fuga dignissimos ab recusandae quasi natus consectetur vero ex earum nemo minima sapiente ad, similique vitae facere autem placeat iste fugiat? Explicabo veniam debitis minima assumenda eaque tempore quia."}
                                 />
                             ))
                         }
