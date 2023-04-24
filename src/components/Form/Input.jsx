@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./index.module.css";
-const Input = ({ inputLabel, ...props }) => {
+const Input = ({ inputLabel, error, required, ...props }) => {
 
     const [randomId, setRandomId] = useState(0);
 
@@ -9,16 +9,25 @@ const Input = ({ inputLabel, ...props }) => {
     }, [])
 
     return (
-        <label htmlFor={randomId} className={`${styles.input_wrapper}`}>
-            <span className='text-xs font-medium'>
-                {inputLabel}
-            </span>
-            <input
-                {...props}
-                className={styles.input}
-                id={randomId}
-            />
-        </label>
+        <>
+            <label htmlFor={randomId} className={`${styles.input_wrapper}`}>
+                <span className={`text-xs font-medium ${error && "text-red-300"}`}>
+                    {inputLabel} {required && "*"}
+                </span>
+                <input
+                    {...props}
+                    className={styles.input}
+                    id={randomId}
+                />
+
+            </label>
+            {
+                error &&
+                <span className={`${styles.input_error}`}>
+                    {error}
+                </span>
+            }
+        </>
     )
 }
 

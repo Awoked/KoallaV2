@@ -1,18 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { useSnapshot } from 'valtio';
-import state from '@/store';
 import SlideItem from './SlideItem';
 import { Autoplay } from 'swiper';
 
 const HeroSection = () => {
 
 
-    const snap = useSnapshot(state);
 
-    const sliderData = [
+    const [sliderData, setSliderData] = useState([
         {
             title: "John Wick",
             bgCover: "/images/movie-images/john-wick4.webp",
@@ -31,7 +28,7 @@ const HeroSection = () => {
             cover: "/images/movie-images/john-wick4-cover.webp",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quis natus autem reprehenderit aliquam voluptatibus rem amet placeat. Quis, cupiditate! Odio laudantium porro sapiente consectetur necessitatibus adipisci quia ab qui!"
         },
-    ]
+    ])
 
     return (
         <section className=''>
@@ -40,11 +37,11 @@ const HeroSection = () => {
                 <Swiper
                     slidesPerView={1}
                     speed={1300}
-                    autoplay={{
-                        delay: 6500,
-                        disableOnInteraction: false
-                    }}
-                    modules={[Autoplay]}
+                // autoplay={{
+                //     delay: 6500,
+                //     disableOnInteraction: false
+                // }}
+                // modules={[Autoplay]}
                 >
                     {
                         sliderData.map((data, index) => (

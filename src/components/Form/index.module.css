@@ -40,3 +40,10 @@
     focus-within:before:w-full
     ;
 }
+
+.input_error{
+    @apply
+    text-red-500
+    text-xs
+    ;
+}

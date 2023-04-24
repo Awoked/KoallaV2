@@ -11,8 +11,8 @@ import styles from "./index.module.css"
 const Button = ({ variant, children, ...props }) => {
     return (
         <button
-            className={`${styles.button} ${variant === "outline" && styles.outline} ${props.className}`}
             {...props}
+            className={`${styles.button} ${variant === "outline" && styles.outline} ${props.className}`}
         >
             {children}
         </button>

@@ -5,8 +5,16 @@ import Input from '@/components/Form/Input'
 import Button from '@/components/Buttons/Button'
 
 import { Formik } from "formik"
+import { AiOutlineLoading } from 'react-icons/ai'
 
 const login = () => {
+
+    const handleLogin = (values, actions) => {
+        setTimeout(() => {
+            alert(JSON.stringify(values, null, 2))
+            actions.setSubmitting(false)
+        }, 1000);
+    }
 
     const validateForm = values => {
         const errors = {}
@@ -28,17 +36,12 @@ const login = () => {
             }}
 
             validate={validateForm}
-
-            onSubmit={(values, actions) => {
-                alert(JSON.stringify(values, null, 2))
-                actions.setSubmitting(false)
-            }}
+            onSubmit={handleLogin}
         >
             {
-                ({ handleSubmit, errors, values, handleChange }) => {
+                ({ handleSubmit, errors, values, handleChange, isSubmitting }) => (
 
-                    <form onSubmit={handleSubmit}>
-                        asdasd
+                    <form onSubmit={handleSubmit} className='w-full h-full'>
                         <Form>
 
                             <Input
@@ -47,28 +50,35 @@ const login = () => {
                                 name="username"
                                 onChange={handleChange}
                                 value={values.username}
+                                error={errors.username}
+                                required
                             />
-                            {errors.username && errors.username}
                             <Input
                                 inputLabel={"Şifre"}
                                 placeholder="Şifre"
                                 type="password"
                                 name="password"
                                 onChange={handleChange}
-                                value={values.password}
+                                error={errors.password}
+                                required
                             />
-                            {errors.password && errors.password}
-
                             <Button
                                 variant={"outline"}
                                 onClick={() => console.log("test")}
                                 type="submit"
+                                disabled={isSubmitting}
+                                className={`${isSubmitting && "cursor-not-allowed"}`}
                             >
-                                Giriş Yap
+                                {
+                                    isSubmitting ?
+                                        <AiOutlineLoading className='animate-spin' size={24} />
+                                        :
+                                        "Giriş Yap"
+                                }
                             </Button>
                         </Form>
                     </form>
-                }
+                )
             }
         </Formik>
 

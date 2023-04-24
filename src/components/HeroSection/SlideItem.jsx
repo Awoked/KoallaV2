@@ -9,7 +9,7 @@ import useWindowSize from '../hooks/useWindowSize';
 import { BsFillPlayFill } from "react-icons/bs";
 
 //#region gsap
-import { Circ, Expo, Power2, gsap } from 'gsap';
+import { Circ, Expo, gsap } from 'gsap';
 
 const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPrev }) => {
 
@@ -65,10 +65,11 @@ const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPre
         <div className='hero-slide-item relative'>
             <div className="bg-cover w-full max-md:min-h-[800px] max-md:h-screen" style={styleHeight}>
                 <Image
-                    priority
                     src={bgCover}
+                    priority
                     width={720}
                     height={480}
+                    quality={1}
                     className='md:w-full max-md:h-full object-cover'
                     alt={title}
                 />
@@ -84,6 +85,7 @@ const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPre
                         <div className="cover-wrapper">
                             <div ref={coverElement} className="cover max-md:max-h-[500px] md:w-max md:h-full rounded-md overflow-hidden shadow-2xl shadow-black">
                                 <Image
+                                    quality={0}
                                     priority
                                     src={cover}
                                     width={600}
