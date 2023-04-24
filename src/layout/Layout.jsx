@@ -70,7 +70,7 @@ Hakkıdır, Hakk’a tapan milletimin istiklâl!
 `
 
     const { shuffledText } = useTextMixer(mars);
-
+    const [matrixDone, setMatrixDone] = useState(false);
     const isLoading = useLoading();
     useEffect(() => {
 
@@ -97,7 +97,12 @@ Hakkıdır, Hakk’a tapan milletimin istiklâl!
                 delay: 0.3,
                 display: "none"
             })
-            tl.to(".mixed-text-wrapper", { display: "none" })
+            tl.to(".mixed-text-wrapper", {
+                display: "none",
+                onComplete: () => {
+                    setMatrixDone(true)
+                }
+            })
         }
 
     }, [isLoading])
@@ -105,16 +110,19 @@ Hakkıdır, Hakk’a tapan milletimin istiklâl!
     return (
 
         <>
-            <div className='mixed-text-wrapper absolute grid place-items-center w-full h-screen overflow-hidden z-50 top-0 left-0 bg-black bg-opacity-70'>
-                <p className='mixed-text flex flex-wrap gap-5 w-full p-2 text-3xl font-bold'>
-                    {
-                        TextToSpan(shuffledText)
-                    }
-                </p>
-            </div>
+            {
+                !matrixDone &&
+                <div className='mixed-text-wrapper absolute grid place-items-center w-full h-screen overflow-hidden z-50 top-0 left-0 bg-black bg-opacity-70'>
+                    <p className='mixed-text flex flex-wrap gap-5 w-full p-2 text-3xl font-bold'>
+                        {
+                            TextToSpan(shuffledText)
+                        }
+                    </p>
+                </div>
+            }
             <div className={`flex flex-col-reverse md:flex-row ${comfortaa.className}`}>
                 <SideBar />
-                <main className='w-full relative' style={{ width: screenWidth >= snap.breakPoints.md ? `calc(100% - ${snap.asideWidth}px)` : "100%" }}>
+                <main className='w-full min-h-screen relative' style={{ width: screenWidth >= snap.breakPoints.md ? `calc(100% - ${snap.asideWidth}px)` : "100%" }}>
 
                     <Search />
 
