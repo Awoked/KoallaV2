@@ -17,7 +17,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { Tooltip } from 'react-tippy'
 
-const login = () => {
+const LoginPage = () => {
 
     const { status } = useSession();
     const router = useRouter();
@@ -157,4 +157,4 @@ const login = () => {
     )
 }
 
-export default login
+export default LoginPage

@@ -8,7 +8,7 @@ import { Formik } from "formik"
 import { AiOutlineLoading } from 'react-icons/ai'
 import Head from 'next/head'
 
-const Register = () => {
+const RegisterPage = () => {
 
     const handleRegister = (values, actions) => {
         setTimeout(() => {
@@ -109,4 +109,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default RegisterPage
