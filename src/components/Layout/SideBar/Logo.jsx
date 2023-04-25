@@ -3,13 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { useSnapshot } from 'valtio'
-import useWindowSize from '../hooks/useWindowSize'
+import useWindowSize from '../../hooks/useWindowSize'
 
 const Logo = () => {
 
     const snap = useSnapshot(state)
 
-    const {screenWidth} = useWindowSize();
+    const { screenWidth } = useWindowSize();
 
     return (
         <div className="logo max-md:h-full max-md:w-2/12 max-md:flex max-md:justify-center">

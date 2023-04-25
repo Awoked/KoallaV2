@@ -5,14 +5,17 @@ import { FiMenu } from "react-icons/fi";
 
 import { Tooltip } from 'react-tippy';
 
-import useWindowSize from '../hooks/useWindowSize';
+import useWindowSize from '../../hooks/useWindowSize';
 import { useSnapshot } from 'valtio';
-import state from "../../store";
+import state from "../../../store";
 
 //#region Components
 import NavLink from './NavLink';
 import Logo from './Logo';
 import Menu from './Menu';
+import { signOut, useSession } from 'next-auth/react';
+import Button from '../../Buttons/Button';
+import LoggedUser from './LoggedUser';
 
 
 
@@ -42,6 +45,8 @@ const SideBar = () => {
         }
 
     }, [snap.asideActive, screenWidth]);
+
+    const { status, data } = useSession();
 
     return (
         <>
@@ -116,12 +121,21 @@ const SideBar = () => {
                                     setMenuActive={setAuthMenuToggler}
                                     isMenuActive={authMenuToggler}
                                 >
-                                    <NavLink href={"/auth/login"} onClick={() => setAuthMenuToggler(false)}>
-                                        <span className='w-max text-sm 2xl:text-base'>Giriş Yap</span>
-                                    </NavLink>
-                                    <NavLink href={"/auth/register"} className="bg-[#FD3D23]" onClick={() => setAuthMenuToggler(false)}>
-                                        <span className='w-max text-sm 2xl:text-base'>Kayıt Ol</span>
-                                    </NavLink>
+                                    {
+                                        status === "unauthenticated" ?
+                                            <>
+                                                <NavLink href={"/auth/login"} onClick={() => setAuthMenuToggler(false)}>
+                                                    <span className='w-max text-sm 2xl:text-base'>Giriş Yap</span>
+                                                </NavLink>
+                                                <NavLink href={"/auth/register"} className="bg-[#FD3D23]" onClick={() => setAuthMenuToggler(false)}>
+                                                    <span className='w-max text-sm 2xl:text-base'>Kayıt Ol</span>
+                                                </NavLink>
+                                            </>
+                                            :
+                                            <>
+                                                <LoggedUser />
+                                            </>
+                                    }
                                 </Menu>
                             </li>
                         </ul>

@@ -1,0 +1,26 @@
+
+.logged_item_wrapper{
+    @apply
+    flex 
+    flex-col
+    px-1
+    w-full
+    py-2
+    border-b
+    ;
+}
+.logged_item_wrapper span{
+    @apply
+    text-sm
+    font-light
+    opacity-90
+    ;
+}
+.logged_item_wrapper h6{
+    @apply
+    text-lg
+    font-medium
+    w-max
+    px-1
+    ;
+}

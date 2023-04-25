@@ -2,8 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import { useSnapshot } from 'valtio'
 
-import store from "../../store"
-import useWindowSize from '../hooks/useWindowSize'
+import store from "@/store"
+import useWindowSize from '../../hooks/useWindowSize'
 
 const NavLink = ({ href, children, linkName, ...props }) => {
 
