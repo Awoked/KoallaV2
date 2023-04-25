@@ -15,6 +15,7 @@ import { BsFillPlayFill } from 'react-icons/bs';
 const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId }) => {
 
     const [toggleDetails, setToggleDetails] = useState(false);
+    const [readMore, setReadMore] = useState(false);
 
     const details = useRef(null);
     const detailsInner = useRef(null);
@@ -91,7 +92,7 @@ const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId }) => {
             {
                 toggleDetails &&
                 <div ref={details} className='fixed grid place-items-center left-0 top-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-sm z-30'>
-                    <div ref={detailsInner} className='w-11/12 h-4/6 md:w-2/3 md:h-2/3 z-20 bg-[#262428] bg-opacity-80 backdrop-blur-sm overflow-hidden shadow-md shadow-black rounded-lg relative'>
+                    <div ref={detailsInner} className='w-11/12 h-5/6 max-md:mb-14 md:w-2/3 md:h-3/6 z-20 bg-[#262428] bg-opacity-80 backdrop-blur-sm overflow-hidden shadow-md shadow-black rounded-lg relative'>
                         <div className='absolute right-3 top-3 z-10'>
                             <Button
                                 onClick={closeWithAnimation}
@@ -125,11 +126,23 @@ const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId }) => {
                                             {imdb}
                                         </span>
                                     </div>
-                                    <div className="content-body flex flex-col justify-between h-full">
-                                        <p className='text-sm xl:text-base opacity-80 w-4/6'>
-                                            {movieDetails}
-                                        </p>
-                                        <div>
+                                    <div className="content-body-wrapper h-full grid grid-cols-2">
+                                        <div className="content-body flex flex-col gap-y-6 justify-between h-full">
+                                            <div className='h-full relative overflow-y-auto'>
+                                                <p className={`text-sm xl:text-base absolute opacity-80 pb-6 md:pb-8 ${!readMore && "line-clamp-4"}`}>
+                                                    {
+                                                        movieDetails
+                                                    }
+                                                    <span
+                                                        onClick={() => setReadMore(true)}
+                                                        className={`bg-[#FD3D23] relative cursor-pointer w-full flex justify-center rounded-sm font-light transition-opacity text-base duration-300 ${readMore && "opacity-0"}`}
+                                                    >
+                                                        Devamını oku
+                                                    </span>
+                                                </p>
+
+
+                                            </div>
                                             <Link
                                                 href={{
                                                     pathname: "/",
@@ -145,6 +158,9 @@ const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId }) => {
                                                     İzle
                                                 </Button>
                                             </Link>
+                                        </div>
+                                        <div>
+
                                         </div>
                                     </div>
                                 </div>

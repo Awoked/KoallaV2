@@ -29,7 +29,7 @@ const MoviePlayer = () => {
             >
                 <div className="relative w-full h-full grid place-items-center">
                     <div
-                        className={`absolute left-0 top-0 py-3 px-4 z-10 w-full bg-gradient-to-b from-black to-transparent transition-all group opacity-0 hover:opacity-100`}
+                        className={`absolute left-0 top-0 py-3 px-4 z-10 w-full bg-gradient-to-b from-black to-transparent transition-all group opacity-100 hover:opacity-100`}
                     >
                         <Link
                             href={"/"}
