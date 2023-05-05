@@ -2,7 +2,6 @@ import SideBar from '@/components/Layout/SideBar'
 import React, { useEffect, useState } from 'react'
 import 'react-tippy/dist/tippy.css'
 
-import { Comfortaa } from 'next/font/google'
 import Search from '@/components/Layout/Search'
 import { useSnapshot } from 'valtio'
 import state from '@/store'
@@ -12,7 +11,6 @@ import { useRouter } from 'next/router'
 
 import PageLoader from '@/components/PageLoader'
 
-const comfortaa = Comfortaa({ subsets: ['latin'] })
 
 const Layout = ({ children }) => {
 
@@ -24,7 +22,7 @@ const Layout = ({ children }) => {
 
         <>
 
-            <div className={`flex flex-col-reverse md:flex-row ${comfortaa.className}`}>
+            <div className={`flex flex-col-reverse md:flex-row`}>
                 <SideBar />
                 <main className='w-full min-h-screen relative' style={{ width: screenWidth >= snap.breakPoints.md ? `calc(100% - ${snap.asideWidth}px)` : "100%" }}>
 

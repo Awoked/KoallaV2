@@ -7,7 +7,12 @@
     w-full
     py-2
     border-b
+    gap-1.5
+    min-w-[140px]
     ;
+}
+.logged_item_wrapper img{
+    @apply  max-w-[32px];
 }
 .logged_item_wrapper span{
     @apply
@@ -18,9 +23,20 @@
 }
 .logged_item_wrapper h6{
     @apply
-    text-lg
+    text-base
     font-medium
     w-max
     px-1
+    leading-tight
+    line-clamp-1
     ;
+}
+
+.logged_user_information_wrapper{
+    @apply
+    flex
+    items-center
+    w-full
+    gap-1.5
+    ;   
 }

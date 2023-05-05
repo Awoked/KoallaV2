@@ -16,6 +16,7 @@ import Menu from './Menu';
 import { signOut, useSession } from 'next-auth/react';
 import Button from '../../Buttons/Button';
 import LoggedUser from './LoggedUser';
+import Image from 'next/image';
 
 
 
@@ -108,12 +109,25 @@ const SideBar = () => {
                             <li className="nav-item">
                                 <Tooltip
                                     disabled={snap.asideActive}
-                                    title={"Kayıt Ol"}
+                                    title={status === "authenticated" ? data.user?.name : "Kayıt Ol"}
                                     position={screenWidth > snap.breakPoints.md ? "right" : "top"}
                                     trigger="mouseenter"
                                 >
-                                    <NavLink as="button" onClick={() => setAuthMenuToggler(!authMenuToggler)} linkName={"Kayıt Ol"}  >
-                                        <AiOutlineUser />
+                                    <NavLink as="button" onClick={() => setAuthMenuToggler(!authMenuToggler)} linkName={status === "authenticated" ? data.user?.name : "Kayıt Ol"}  >
+
+                                        {
+                                            status === "authenticated" ?
+                                                data.user?.image &&
+                                                <Image
+                                                    src={data.user?.image}
+                                                    width={32}
+                                                    height={32}
+                                                    alt={data.user?.name}
+                                                    className='max-w-[30px] rounded-full'
+                                                />
+                                                :
+                                                <AiOutlineUser />
+                                        }
 
                                     </NavLink>
                                 </Tooltip>
