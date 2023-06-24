@@ -8,16 +8,15 @@ const MoviePlayer = () => {
 
     const router = useRouter();
 
-    const [movie, setMovie] = useState({
-        url: "/videos/neon.mp4"
-    });
+    const [movie, setMovie] = useState();
 
 
     useEffect(() => {
 
         const id = router.query;
+        console.log(id)
         setMovie({
-            url: "/videos/neon.mp4"
+            url: "https://vidmoxy.com/f/v1x883c3fe7?vst=1"
         })
     }, [router])
 
@@ -41,14 +40,16 @@ const MoviePlayer = () => {
 
 
                     </div>
-                    <video
+                    {/* <video
                         src={movie.url}
                         controls
                         className='w-full'
                     >
 
-                    </video>
+                    </video> */}
 
+                    <iframe src={movie?.url} frameborder="0" allowFullScreen width="100%" height="100%" className="w-full h-full object-cover"></iframe>
+                    
                 </div>
             </div>
 
