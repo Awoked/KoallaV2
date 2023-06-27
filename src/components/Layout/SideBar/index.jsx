@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { AiOutlineHome, AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
-
+import { MdOutlineAdminPanelSettings } from "react-icons/md"
 import { Tooltip } from 'react-tippy';
 
 import useWindowSize from '../../hooks/useWindowSize';
@@ -113,18 +113,24 @@ const SideBar = () => {
                                     position={screenWidth > snap.breakPoints.md ? "right" : "top"}
                                     trigger="mouseenter"
                                 >
-                                    <NavLink as="button" onClick={() => setAuthMenuToggler(!authMenuToggler)} linkName={status === "authenticated" ? data.user?.name : "Kayıt Ol"}  >
+                                    <NavLink
+                                        as="button"
+                                        onClick={() => setAuthMenuToggler(!authMenuToggler)}
+                                        linkName={status === "authenticated" ? data.user?.name : "Kayıt Ol"}
+                                    >
 
                                         {
                                             status === "authenticated" ?
-                                                data.user?.image &&
-                                                <Image
-                                                    src={data.user?.image}
-                                                    width={32}
-                                                    height={32}
-                                                    alt={data.user?.name}
-                                                    className='max-w-[30px] rounded-full'
-                                                />
+                                                data.user?.image ?
+                                                    <Image
+                                                        src={data.user?.image}
+                                                        width={32}
+                                                        height={32}
+                                                        alt={data.user?.name}
+                                                        className='max-w-[30px] rounded-full'
+                                                    />
+                                                    :
+                                                    <AiOutlineUser color={data.user?.role === "admin" && "red"} />
                                                 :
                                                 <AiOutlineUser />
                                         }
@@ -152,6 +158,26 @@ const SideBar = () => {
                                     }
                                 </Menu>
                             </li>
+                            {
+                                status === "authenticated" &&
+                                data.user?.role === "admin" &&
+                                <li className="nav-item">
+                                    <Tooltip
+                                        disabled={snap.asideActive}
+                                        title={"Admin Sayfası"}
+                                        position={screenWidth > snap.breakPoints.md ? "right" : "top"}
+                                        trigger="mouseenter"
+                                    >
+                                        <NavLink
+                                            href={"/admin"}
+                                            onClick={() => setAuthMenuToggler(!authMenuToggler)}
+                                            linkName={"Admin"}
+                                        >
+                                            <MdOutlineAdminPanelSettings />
+                                        </NavLink>
+                                    </Tooltip>
+                                </li>
+                            }
                         </ul>
                     </nav>
 

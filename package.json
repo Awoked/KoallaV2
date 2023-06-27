@@ -16,6 +16,8 @@
     "eslint-config-next": "13.3.0",
     "formik": "^2.2.9",
     "gsap": "^3.11.5",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.3.1",
     "next": "13.3.0",
     "next-auth": "^4.22.1",
     "next-loader": "^1.1.0",

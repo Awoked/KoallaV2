@@ -32,10 +32,7 @@ const Layout = ({ children }) => {
                 </main>
 
             </div>
-            {
-                router.query?.id &&
-                <MoviePlayer />
-            }
+           
 
             <PageLoader
                 delay={150}

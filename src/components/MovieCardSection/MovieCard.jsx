@@ -155,11 +155,7 @@ const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId, genre }
 
                                             </div>
                                             <Link
-                                                href={{
-                                                    pathname: "/",
-                                                    query: { "id": movieId }
-                                                }}
-                                                as={`/${slugify(movieName)}`}
+                                                href={`/${slugify(movieName)}`}
                                             >
                                                 <Button
                                                     className="border-white !rounded-full px-4"

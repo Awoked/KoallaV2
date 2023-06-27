@@ -6,15 +6,21 @@ import { BsArrowLeft } from 'react-icons/bs';
 
 const MoviePlayer = () => {
 
-    const router = useRouter();
 
     const [movie, setMovie] = useState();
 
+    const router = useRouter();
+    const { slug } = router.query;
+    useEffect(() => {
+        console.log(slug);
+    }, [router])
+
 
     useEffect(() => {
-
         const id = router.query;
+
         console.log(id)
+
         setMovie({
             url: "https://vidmoxy.com/f/v1x883c3fe7?vst=1"
         })
@@ -40,16 +46,9 @@ const MoviePlayer = () => {
 
 
                     </div>
-                    {/* <video
-                        src={movie.url}
-                        controls
-                        className='w-full'
-                    >
-
-                    </video> */}
 
                     <iframe src={movie?.url} frameborder="0" allowFullScreen width="100%" height="100%" className="w-full h-full object-cover"></iframe>
-                    
+
                 </div>
             </div>
 

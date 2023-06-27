@@ -14,9 +14,9 @@ export const authOptions = {
                 const { username, password } = credentials;
 
 
-                const user = { id: "24", name: "alper", email: "test", role: "admin" };
+                const user = { id: "24", name: "koallaAdmin", email: "test", role: "admin" };
 
-                if (username !== user.name && password !== "1234") {
+                if (username !== user.name && password !== "salihalper1234") {
                     return null;
                 }
 
