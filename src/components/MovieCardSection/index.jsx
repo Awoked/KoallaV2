@@ -4,23 +4,21 @@ import SectionTitle from '../SectionTitle'
 import styles from "./index.module.css";
 import MovieCard from './MovieCard';
 
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
-import { db } from '@/firebase/initFirebase';
 const MovieCardSection = () => {
 
     const movieData = [..."123456789"];
 
-    async function getMovies(db) {
-        const moviesCol = collection(db, 'movies');
-        const movieSnapshot = await getDocs(moviesCol);
-        const movieList = movieSnapshot.docs.map(doc => doc.data());
-        return movieList;
-    }
-
     useEffect(() => {
-        getMovies(db).then(data =>{
-            console.log(data)
+        fetch("/api/movies").then((res) => {
+            console.log(res)
+            if (res.status === 200) {
+                return res.json();
+            }
+        }).then((data) => {
+            console.log(data);
+        }).catch(error => {
+            console.log(error)
         })
     }, [])
 
