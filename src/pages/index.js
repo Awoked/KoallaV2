@@ -7,6 +7,7 @@ import HeroSection from '@/components/HeroSection';
 
 export default function Home({ firstLoad }) {
 
+
   return (
     <>
       <Head>
@@ -20,6 +21,7 @@ export default function Home({ firstLoad }) {
       }
       <HeroSection />
       <MovieCardSection />
+   
       {/* <iframe src="//vidmoly.to/embed-gn3mq95uldn3.html" scrolling="no" frameborder="0" width="640" height="360" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe> */}
     </>
 
