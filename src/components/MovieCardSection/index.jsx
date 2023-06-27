@@ -17,6 +17,9 @@ const MovieCardSection = () => {
             .then(data => {
                 setTestData(data);
             })
+            .catch(error => {
+                console.log(error)
+            })
     }, [])
 
     return (
