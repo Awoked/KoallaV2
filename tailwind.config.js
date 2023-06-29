@@ -8,8 +8,15 @@ module.exports = {
   ],
   theme: {
     container: {
+      center: true,
       padding: '2rem',
     },
+    extend: {
+      colors: {
+        themeOrange: "rgb(253 61 35)",
+      }
+    }
   },
+
   plugins: [],
 }

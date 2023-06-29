@@ -4,7 +4,6 @@ import styles from "./index.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
 import { Tooltip } from 'react-tippy';
-import slugify from '@/helpers/slugify';
 
 import { FaImdb } from "react-icons/fa";
 import Button from '../Buttons/Button';
@@ -12,7 +11,7 @@ import { IoMdClose } from "react-icons/io";
 import { gsap } from 'gsap';
 import { BsFillPlayFill } from 'react-icons/bs';
 
-const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId, genre }) => {
+const MovieCard = ({ slug, movieName, movieImage, movieDetails, imdb, movieId, genre }) => {
 
     const [toggleDetails, setToggleDetails] = useState(false);
 
@@ -54,7 +53,7 @@ const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId, genre }
                 closeWithAnimation();
             }
         }
-
+        console.log(slug)
         document.addEventListener('keydown', handleKeyPress);
 
         return () => {
@@ -70,14 +69,14 @@ const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId, genre }
             >
                 <div
                     onClick={() => setToggleDetails(true)}
-                    className={styles.card}
+                    className={`${styles.card} h-full`}
                 >
-                    <div className="cover">
-                        <Image
-                            src={movieImage}
+                    <div className="cover h-full">
+                        <img
+                            src={movieImage ? movieImage : "/images/koalla-movie-cover.png"}
                             width={300}
                             height={450}
-                            className='w-full object-cover'
+                            className='w-full h-full object-cover'
                             alt={movieName}
                         />
                     </div>
@@ -89,7 +88,9 @@ const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId, genre }
                             >
                                 {movieName}
                             </h3>
-
+                            <p>
+                                {slug}
+                            </p>
 
                         </div>
                         <div className='absolute top-0 flex justify-between p-1'>
@@ -121,8 +122,8 @@ const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId, genre }
 
                         <div className={`h-full relative flex flex-col`}>
                             <div className="relative h-1/3 cover w-full before:absolute before:left-0 before:bottom-0 before:w-full before:h-full before:bg-gradient-to-t before:from-[#262428] before:to-transparent">
-                                <Image
-                                    src={movieImage}
+                                <img
+                                    src={movieImage ? movieImage : "/images/koalla-movie-cover.png"}
                                     width={400}
                                     height={200}
                                     className='h-full w-full object-cover object-center'
@@ -155,7 +156,8 @@ const MovieCard = ({ movieName, movieImage, movieDetails, imdb, movieId, genre }
 
                                             </div>
                                             <Link
-                                                href={`/${slugify(movieName)}`}
+                                                // as={`/${slug}`}
+                                                href={`/${slug}?id=${movieId}`}
                                             >
                                                 <Button
                                                     className="border-white !rounded-full px-4"

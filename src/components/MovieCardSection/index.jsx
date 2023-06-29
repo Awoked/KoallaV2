@@ -8,15 +8,16 @@ import MovieCard from './MovieCard';
 const MovieCardSection = () => {
 
     const movieData = [..."123456789"];
+    const [movies, setMovies] = useState([]);
 
     useEffect(() => {
         fetch("/api/movies").then((res) => {
-            console.log(res)
             if (res.status === 200) {
                 return res.json();
             }
         }).then((data) => {
             console.log(data);
+            setMovies(data);
         }).catch(error => {
             console.log(error)
         })
@@ -36,15 +37,17 @@ const MovieCardSection = () => {
                     <div className={`${styles.movies_grid}`}>
 
                         {
-                            movieData.map((data, index) => (
+                            movies.map((data, index) => (
 
                                 <MovieCard
                                     key={index}
-                                    movieId={1}
-                                    movieName={"Ready Player One"}
-                                    movieImage={"/images/movie-images/ready-player-one-cover.webp"}
-                                    imdb={9.5}
-                                    movieDetails={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae saepe accusamus fuga dignissimos ab recusandae quasi natus consectetur vero ex earum nemo minima sapiente ad, similique vitae facere autem placeat iste fugiat? Explicabo veniam debitis minima assumenda eaque tempore quia."}
+                                    movieId={data.id}
+                                    movieName={data.title}
+                                    movieImage={data.imageCover}
+                                    imdb={data.imdb}
+                                    movieDetails={data.description}
+                                    slug={data.slug}
+                                    movieData={data}
                                 />
                             ))
                         }

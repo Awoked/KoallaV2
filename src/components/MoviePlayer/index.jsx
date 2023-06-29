@@ -1,31 +1,10 @@
-import slugify from '@/helpers/slugify';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { BsArrowLeft } from 'react-icons/bs';
 
-const MoviePlayer = () => {
-
-
-    const [movie, setMovie] = useState();
-
-    const router = useRouter();
-    const { slug } = router.query;
-    useEffect(() => {
-        console.log(slug);
-    }, [router])
-
-
-    useEffect(() => {
-        const id = router.query;
-
-        console.log(id)
-
-        setMovie({
-            url: "https://vidmoxy.com/f/v1x883c3fe7?vst=1"
-        })
-    }, [router])
-
+const MoviePlayer = ({ movieURL }) => {
+    console.log(movieURL)
     return (
         <>
 
@@ -47,8 +26,11 @@ const MoviePlayer = () => {
 
                     </div>
 
-                    <iframe src={movie?.url} frameborder="0" allowFullScreen width="100%" height="100%" className="w-full h-full object-cover"></iframe>
+                    {
+                        movieURL &&
+                        <iframe src={movieURL} frameBorder="0" allowFullScreen width="100%" height="100%" className="w-full h-full object-cover"></iframe>
 
+                    }
                 </div>
             </div>
 

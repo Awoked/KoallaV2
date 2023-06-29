@@ -1,7 +1,7 @@
 import { addDoc, collection, getDocs, deleteDoc, updateDoc, doc, getDoc } from 'firebase/firestore/lite';
 import { db } from "@/firebase/initFirebase";
 
-const moviesCol = collection(db, 'movies');
+const usersCol = collection(db, 'users');
 
 async function get(id) {
     try {
@@ -11,13 +11,13 @@ async function get(id) {
 
             return docSnap.data();
         } else {
-            const movieSnapshot = await getDocs(moviesCol);
-            const movieList = movieSnapshot.docs.map(doc => {
+            const movieSnapshot = await getDocs(usersCol);
+            const userList = movieSnapshot.docs.map(doc => {
                 let data = doc.data();
 
                 return data;
             });
-            return movieList;
+            return userList;
         }
 
 
@@ -26,11 +26,11 @@ async function get(id) {
     }
 }
 
-async function add(movieData) {
+async function add(userData) {
 
     try {
 
-        const docRef = await addDoc(moviesCol, movieData);
+        const docRef = await addDoc(usersCol, userData);
         //id'yi güncellemek için
         update(docRef.id, { id: docRef.id })
     } catch (error) {
@@ -40,7 +40,7 @@ async function add(movieData) {
 
 async function remove(id) {
     try {
-        const docRef = doc(moviesCol, id);
+        const docRef = doc(usersCol, id);
         await deleteDoc(docRef);
     } catch (error) {
         throw new Error("Hata")
@@ -49,7 +49,7 @@ async function remove(id) {
 
 async function update(id, newData) {
     try {
-        const docRef = doc(moviesCol, id);
+        const docRef = doc(usersCol, id);
         await updateDoc(docRef, newData);
     } catch (error) {
         throw new Error('Hata');

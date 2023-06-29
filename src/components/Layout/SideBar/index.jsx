@@ -170,7 +170,6 @@ const SideBar = () => {
                                     >
                                         <NavLink
                                             href={"/admin"}
-                                            onClick={() => setAuthMenuToggler(!authMenuToggler)}
                                             linkName={"Admin"}
                                         >
                                             <MdOutlineAdminPanelSettings />

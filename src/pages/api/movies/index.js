@@ -1,13 +1,14 @@
 import { get, add, remove, update } from "@/firebase/movies";
+import slugify from "slugify";
 
 
 export default function (req, res) {
     if (req.method === "GET") {
-
-        get().then(data => {
+        const { id } = req.query;
+        get(id && id).then(data => {
             res.status(200).json(data);
         }).catch(error => {
-            res.status(500).end();
+            res.status(500).json({ message: "Error!", error: error });
         });
     }
 
@@ -15,14 +16,17 @@ export default function (req, res) {
         const { title, description, imageCover, movieURL } = req.body;
 
         const data = req.body;
-        console.log(data)
 
-        add(data).catch(error => {
+        add({
+            ...data,
+            slug: slugify(data.title)
+        }).then(() => {
+            res.status(200).json({ message: "Successfully added!" });
+        }).catch(error => {
             console.log(error);
             res.status(404).end();
         })
 
-        res.status(200).json({ message: "Successfully added!" });
     }
 
     else if (req.method === "DELETE") {
