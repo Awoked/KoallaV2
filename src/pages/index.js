@@ -7,7 +7,7 @@ import HeroSection from '@/components/HeroSection';
 
 export default function Home({ firstLoad }) {
 
-
+  console.log("HOST:",process.env.HOST)
   return (
     <>
       <Head>
