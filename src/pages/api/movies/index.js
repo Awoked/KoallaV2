@@ -2,7 +2,7 @@ import { get, add, remove, update } from "@/firebase/movies";
 import slugify from "slugify";
 
 
-export default function (req, res) {
+export default function handler(req, res) {
     if (req.method === "GET") {
         const { id } = req.query;
         get(id && id).then(data => {

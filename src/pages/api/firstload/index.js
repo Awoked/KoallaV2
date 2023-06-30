@@ -1,4 +1,4 @@
-export default function (req, res) {
+export default function handler(req, res) {
     if (req.method === "POST") {
 
         const cookieValue = "false";

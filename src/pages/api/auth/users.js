@@ -1,6 +1,6 @@
 import { add, remove, get, update } from "@/firebase/users";
 
-export default function (req, res) {
+export default function handler(req, res) {
     const method = req.method;
     const { process } = req.query;
 
