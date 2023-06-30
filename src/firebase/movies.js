@@ -22,7 +22,7 @@ async function get(id) {
 
 
     } catch (error) {
-        throw new Error('Hata');
+        throw new Error(error);
     }
 }
 
