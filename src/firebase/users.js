@@ -11,8 +11,8 @@ async function get(id) {
 
             return docSnap.data();
         } else {
-            const movieSnapshot = await getDocs(usersCol);
-            const userList = movieSnapshot.docs.map(doc => {
+            const userSnapshot = await getDocs(usersCol);
+            const userList = userSnapshot.docs.map(doc => {
                 let data = doc.data();
 
                 return data;

@@ -154,7 +154,7 @@ const AdminPage = () => {
         <>
             <ToastContainer />
 
-            <section>
+            <section className="py-4">
                 <div className="container">
                     <div className="mb-8 w-max px-4 py-2 bg-themeOrange rounded-lg">
                         <SectionTitle
@@ -299,7 +299,7 @@ const AdminPage = () => {
                 <div className="container">
                     <div className="mb-4">
                         <SectionTitle
-                            title={"Film sil"}
+                            title={"Filmler"}
                             className="text-red-500"
                         />
                     </div>
@@ -309,13 +309,20 @@ const AdminPage = () => {
                                 <div
                                     key={index}
                                 >
-                                    <Button
-                                        onClick={() => deleteMovie(data.id)}
-                                        className="flex w-full mb-4"
-                                        variant="outline"
-                                    >
-                                        Sil
-                                    </Button>
+                                    <div className="grid grid-cols-2 gap-3 mb-4">
+                                        <Button
+                                            onClick={() => deleteMovie(data.id)}
+                                            variant="outline"
+                                        >
+                                            Sil
+                                        </Button>
+                                        <Button
+                                            className="text-yellow-400 border-yellow-400 hover:bg-yellow-400"
+                                            variant="outline"
+                                        >
+                                            Düzenle
+                                        </Button>
+                                    </div>
                                     <MovieCard
                                         movieName={data.title}
                                         movieDetails={data.description}

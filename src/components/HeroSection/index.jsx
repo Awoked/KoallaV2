@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -6,6 +6,7 @@ import SlideItem from './SlideItem';
 import { Autoplay } from 'swiper';
 
 const HeroSection = () => {
+
 
 
 
@@ -30,6 +31,25 @@ const HeroSection = () => {
         },
     ])
 
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const response = await fetch(`/api/movies`);
+                
+                if (response.status !== 200) {
+                    const error = new Error("Hata");
+                    error.name = "server";
+                    throw error;
+                }
+                const data = await response.json();
+                setSliderData(data);
+            } catch (error) {
+                
+            }
+        }
+        getData();
+    }, [])
+
     return (
         <section className=''>
             <div>
@@ -37,11 +57,11 @@ const HeroSection = () => {
                 <Swiper
                     slidesPerView={1}
                     speed={1300}
-                // autoplay={{
-                //     delay: 6500,
-                //     disableOnInteraction: false
-                // }}
-                // modules={[Autoplay]}
+                autoplay={{
+                    delay: 6500,
+                    disableOnInteraction: false
+                }}
+                modules={[Autoplay]}
                 >
                     {
                         sliderData.map((data, index) => (
@@ -55,8 +75,8 @@ const HeroSection = () => {
                                         isNext={isNext}
                                         isActive={isActive}
                                         title={data.title}
-                                        bgCover={data.bgCover}
-                                        cover={data.cover}
+                                        bgCover={data.imageCover}
+                                        cover={data.imageCover}
                                         description={data.description}
                                     />
                                 )}

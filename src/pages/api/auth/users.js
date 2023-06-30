@@ -12,7 +12,7 @@ export default function (req, res) {
 
                 const user = data.find(data => data.username === username);
                 if (user) {
-                    res.status(500).json({ message: "Bu kullanıcı zaten kayıtlı!" });
+                    res.status(409).json({ message: "Bu kullanıcı zaten kayıtlı!" });
                     return;
                 }
 
@@ -28,12 +28,11 @@ export default function (req, res) {
 
             })
         } else if (process === "login") {
-            console.log(req.body)
             get().then(data => {
 
                 const user = data.find(data => data.username === username && data.password === password);
                 if (user) {
-                    res.status(200).json({ id: user.id, username: user.username, role: user.role });
+                    res.status(200).json({ id: user.id, username: user.username, role: user.role, name: user.username });
                     return;
                 }
 

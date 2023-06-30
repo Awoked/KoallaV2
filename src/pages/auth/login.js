@@ -47,6 +47,7 @@ const LoginPage = () => {
                     progress: undefined,
                     theme: "light",
                 })
+                return;
             }
 
             toast.error("Kullanıcı adı veya şifre hatalı.", {
@@ -119,7 +120,6 @@ const LoginPage = () => {
                                 />
                                 <Button
                                     variant={"outline"}
-                                    onClick={() => console.log("test")}
                                     type="submit"
                                     disabled={isSubmitting}
                                     className={`${isSubmitting && "cursor-not-allowed"}`}

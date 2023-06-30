@@ -88,10 +88,6 @@ const MovieCard = ({ slug, movieName, movieImage, movieDetails, imdb, movieId, g
                             >
                                 {movieName}
                             </h3>
-                            <p>
-                                {slug}
-                            </p>
-
                         </div>
                         <div className='absolute top-0 flex justify-between p-1'>
                             <Tooltip title='IMDB Puanı'>
@@ -109,14 +105,14 @@ const MovieCard = ({ slug, movieName, movieImage, movieDetails, imdb, movieId, g
             </Tooltip>
             {
                 toggleDetails &&
-                <div ref={details} className='fixed grid place-items-center left-0 top-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-sm z-30'>
+                <div ref={details} className='fixed grid place-items-center left-0 top-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-sm z-30 overflow-y-auto'>
                     <div ref={detailsInner} className='w-11/12 h-5/6 max-md:mb-14 md:w-2/3 md:h-[600px] z-20 bg-[#262428] bg-opacity-80 backdrop-blur-sm overflow-hidden shadow-md shadow-black rounded-lg relative'>
                         <div className='absolute right-3 top-3 z-10'>
                             <Button
                                 onClick={closeWithAnimation}
                                 className="!rounded-full p-1.5 group  shadow shadow-black"
                             >
-                                <IoMdClose size={22} className='transition-opacity opacity-0 group-hover:opacity-100' />
+                                <IoMdClose size={22} />
                             </Button>
                         </div>
 
@@ -144,7 +140,7 @@ const MovieCard = ({ slug, movieName, movieImage, movieDetails, imdb, movieId, g
                                             {imdb}
                                         </span>
                                     </div>
-                                    <div className="content-body-wrapper h-full grid grid-cols-2">
+                                    <div className="content-body-wrapper h-full grid">
                                         <div className="content-body flex flex-col gap-y-6 justify-between h-full">
                                             <div className='h-full relative overflow-y-auto'>
                                                 <p className={`text-sm xl:text-base absolute opacity-80 pb-6 md:pb-8`}>
@@ -168,9 +164,9 @@ const MovieCard = ({ slug, movieName, movieImage, movieDetails, imdb, movieId, g
                                                 </Button>
                                             </Link>
                                         </div>
-                                        <div>
+                                        {/* <div>
 
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

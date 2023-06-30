@@ -6,8 +6,8 @@
     before:top-0 
     before:w-full 
     before:h-full
-    before:bg-opacity-40
-    before:backdrop-blur-sm
+    before:bg-opacity-50
+    before:backdrop-blur-md
     z-[3]
     py-4
     md:py-6

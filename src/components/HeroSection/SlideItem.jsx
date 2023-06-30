@@ -63,8 +63,8 @@ const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPre
 
     return (
         <div className='hero-slide-item relative'>
-            <div className="bg-cover w-full max-md:min-h-[800px] min-h-[350px] max-md:h-screen" style={styleHeight}>
-                <Image
+            <div className="bg-cover flex items-center w-full max-md:min-h-[800px] min-h-[350px] max-md:h-screen" style={styleHeight}>
+                <img
                     src={bgCover}
                     width={720}
                     height={480}
@@ -83,7 +83,7 @@ const SlideItem = ({ bgCover, cover, title, description, isActive, isNext, isPre
 
                         <div className="cover-wrapper">
                             <div ref={coverElement} className="cover max-md:max-h-[500px] md:w-max md:h-full rounded-md overflow-hidden shadow-2xl shadow-black">
-                                <Image
+                                <img
                                     quality={0}
                                     src={cover}
                                     width={600}

@@ -19,25 +19,35 @@ export const authOptions = {
                 // if (username !== user.name && password !== "salihalper1234") {
                 //     return null;
                 // }
-                let user;
-                console.log(username, password)
-                fetch(`${process.env.HOST}/api/auth/users?process=login`, {
+                // let user;
+                // console.log(username, password)
+                // fetch(`${process.env.HOST}/api/auth/users?process=login`, {
+                //     method: "POST",
+                //     headers: {
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body: JSON.stringify({ username, password })
+                // }).then((res) => {
+                //     // console.log(res)
+                //     if (res.status === 200) {
+                //         return res.json();
+                //     }
+                // }).then(data => {
+                //     // console.log(process.env.HOST)
+                //     // console.log(data)
+                //     user = data
+                //     return user;
+                // })
+
+                const userResponse = await fetch(`${process.env.HOST}/api/auth/users?process=login`, {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({ username, password })
-                }).then((res) => {
-                    // console.log(res)
-                    if (res.status === 200) {
-                        return res.json();
-                    }
-                }).then(data => {
-                    // console.log(process.env.HOST)
-                    // console.log(data)
-                    user = data
-                    return user;
                 })
+
+                const user = await userResponse.json(); 
 
                 // const user = await fetch(`${process.env.HOST}/api/auth/login`, {
                 //     method: "POST",
