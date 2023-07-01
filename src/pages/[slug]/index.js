@@ -1,4 +1,5 @@
 import MoviePlayer from '@/components/MoviePlayer';
+import Head from 'next/head';
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
@@ -25,6 +26,10 @@ const MoviePage = () => {
 
     return (
         <>
+        <Head>
+            <title>{movieData.title}</title>
+            <meta name="description" content={movieData.description} />
+        </Head>
             <MoviePlayer
                 movieURL={movieData?.movieURL}
             />

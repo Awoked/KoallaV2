@@ -6,6 +6,7 @@ import SectionTitle from '@/components/SectionTitle';
 import { Formik } from 'formik';
 
 import { getSession } from 'next-auth/react';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import React, { useState, useEffect } from 'react'
@@ -152,6 +153,9 @@ const AdminPage = () => {
 
     return (
         <>
+        <Head>
+            <title>Koalla - Admin Paneli</title>
+        </Head>
             <ToastContainer />
 
             <section className="py-4">

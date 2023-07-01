@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import SlideItem from './SlideItem';
 import { Autoplay } from 'swiper';
+import { SUBRESOURCE_INTEGRITY_MANIFEST } from 'next/dist/shared/lib/constants';
 
 const HeroSection = () => {
 
@@ -44,7 +45,6 @@ const HeroSection = () => {
                 const data = await response.json();
                 setSliderData(data);
             } catch (error) {
-                
             }
         }
         getData();
